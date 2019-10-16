@@ -1,9 +1,14 @@
 import React from "react";
 
+import Hero from "../components/Hero";
+import contactBcg from "../images/contactBcg.jpeg";
+import Contact from "../components/ContactPage/Contact";
+
 const ContactPage = () => {
   return (
     <>
-      <h1>Hello from Contact page</h1>
+      <Hero title="contact us" img={contactBcg} />
+      <Contact />
     </>
   );
 };

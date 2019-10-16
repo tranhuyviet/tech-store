@@ -13,11 +13,18 @@ import SingleProductPage from "./pages/SingleProductPage";
 
 import { Route, Switch } from "react-router-dom";
 
-import { FaHome } from "react-icons/fa";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import SideCart from "./components/SideCart";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
+      <Navbar />
+      <Sidebar />
+      <SideCart />
+
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -27,6 +34,7 @@ function App() {
         <Route path="/products/:id" component={SingleProductPage} />
         <Route component={DefaultPage} />
       </Switch>
+      <Footer />
     </>
   );
 }
