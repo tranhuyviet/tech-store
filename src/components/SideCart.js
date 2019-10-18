@@ -1,17 +1,19 @@
 import React from "react";
 
 import { ProductConsumer } from "../context";
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
+import SideCartItems from "../components/SideCartItems";
 
 const SideCart = () => {
   return (
     <ProductConsumer>
       {value => {
-        const { cartOpen, closeCart, cart } = value;
+        const { cartOpen, closeCart, cart, cartTotal } = value;
+        //console.log("value sidecart", value);
         return (
           <CartWrapper show={cartOpen} onClick={closeCart}>
-            <p>cart items</p>
+            <SideCartItems cart={cart} cartTotal={cartTotal} />
           </CartWrapper>
         );
       }}
@@ -30,6 +32,9 @@ const CartWrapper = styled.aside`
   border-left: 3px solid var(--primaryColor);
   transition: var(--mainTransition);
   transform: ${props => (props.show ? "translateX(0)" : "translateX(100%)")};
+
+  /* when side cart over screen hight, can scoll side cart */
+  overflow: scroll;
 
   @media screen and (min-width: 576px) {
     width: 20rem;
