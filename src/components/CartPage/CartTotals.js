@@ -3,7 +3,9 @@ import React from "react";
 import { ProductConsumer } from "../../context";
 import styled from "styled-components";
 
-const CartTotals = () => {
+import PayPalBtn from "./PayPalBtn";
+
+const CartTotals = ({ history }) => {
   return (
     <ProductConsumer>
       {value => {
@@ -18,6 +20,13 @@ const CartTotals = () => {
               <h2 className="cart-total-text">subtotal: ${cartSubTotal}</h2>
               <h2 className="cart-total-text">tax: ${cartTax}</h2>
               <h2 className="cart-total-text">total: ${cartTotal}</h2>
+
+              {/* paypal button */}
+              <PayPalBtn
+                history={history}
+                cartTotal={cartTotal}
+                clearCart={clearCart}
+              />
             </div>
           </CartTotalsWrapper>
         );
