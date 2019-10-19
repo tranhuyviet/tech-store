@@ -31,7 +31,8 @@ const SingleProductPage = () => {
                   <div className="col-10 mx-auto col-sm-8 col-md-6 my-3">
                     <img
                       // contentful will use src={image}
-                      src={`../${image}`}
+                      src={image}
+                      //src={`../${image}`}
                       alt="single product"
                       className="img-fluid"
                     />

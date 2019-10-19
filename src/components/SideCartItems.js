@@ -12,7 +12,8 @@ const SideCartItems = ({ cart, cartTotal }) => {
           <div className="items-container" key={item.id}>
             <div className="img-container">
               <img
-                src={`../${item.image}`}
+                //src={`../${item.image}`}
+                src={item.image}
                 alt="product"
                 className="items-img"
               />
